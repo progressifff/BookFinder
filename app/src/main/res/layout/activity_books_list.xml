@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        >
+        <include
+                android:id="@+id/toolbar"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                layout="@layout/toolbar"
+                app:layout_scrollFlags="scroll|snap|enterAlways"
+        />
+    </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/searchedBooksListRefresher"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                >
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/searchedBooksList"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:fastScrollEnabled="true"
+                        app:fastScrollHorizontalThumbDrawable="@drawable/fast_scroll_indicator"
+                        app:fastScrollHorizontalTrackDrawable="@drawable/fast_scroll_line"
+                        app:fastScrollVerticalThumbDrawable="@drawable/fast_scroll_indicator"
+                        app:fastScrollVerticalTrackDrawable="@drawable/fast_scroll_line"
+                />
+
+                <LinearLayout
+                        android:id="@+id/booksNotFoundMsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="invisible"
+                        android:layout_marginBottom="56dp"
+                        >
+                    <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_search"
+                            android:layout_gravity="center_horizontal"
+                            />
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="@string/books_not_found"
+                            android:textSize="22sp"
+                            />
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+</android.support.design.widget.CoordinatorLayout>

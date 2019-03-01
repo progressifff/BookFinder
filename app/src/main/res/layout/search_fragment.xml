@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        tools:context="presentation.SearchFragment"
+        >
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="32dp"
+                >
+
+                <android.support.design.widget.TextInputLayout
+                        android:id="@+id/authorInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/titleInputLayout"
+                        app:layout_constraintBottom_toTopOf="@+id/isbnInputLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintWidth_percent=".7"
+                        android:layout_marginBottom="8dp"
+                        >
+                        <android.support.design.widget.TextInputEditText
+                                android:id="@+id/author"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/author"
+                                android:singleLine="true"
+                                android:imeOptions="actionNext"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                        android:id="@+id/titleInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@+id/authorInputLayout"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintWidth_percent=".7"
+                        android:layout_marginBottom="8dp"
+                >
+                        <android.support.design.widget.TextInputEditText
+                                android:id="@+id/title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/title"
+                                android:singleLine="true"
+                                android:imeOptions="actionNext"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                        android:id="@+id/isbnInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/authorInputLayout"
+                        app:layout_constraintBottom_toTopOf="@+id/findBookBtn"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintWidth_percent=".7"
+                        android:layout_marginBottom="8dp"
+                >
+                        <android.support.design.widget.TextInputEditText
+                                android:id="@+id/isbn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/isbn"
+                                android:singleLine="true"
+                                android:imeOptions="actionDone"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                        android:id="@+id/findBookBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:text="@string/find_book"
+                        app:layout_constraintTop_toBottomOf="@+id/isbnInputLayout"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintWidth_percent=".7"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="@color/colorAccent"
+
+                />
+
+        </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>
+
